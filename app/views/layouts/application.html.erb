@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+		<%= stylesheet_link_tag :all %>
+		<%= render 'layouts/stylesheets' %>
+
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<%= render 'layouts/header' %>
+
+			<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<% end %>
+
+			<%= yield %>
+
+			<%= render 'layouts/footer' %>
+			<% logger.info("\n### Controller: "+params[:controller]+"\n### Action: "+params[:action]+"\n") if Rails.env.development? %>
+		</div>
+	</body>
+</html>
