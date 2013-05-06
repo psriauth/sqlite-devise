@@ -1,16 +1,14 @@
 _sqlite-devise_
-===============
+---------------
 
----
+__intro__
 
-intro
------
+This Repository comes with Devise and SQLite pre-loaded.
 
-Devise with SQLite 3
-
-startup
--------
+__run__
 
 `` $ bundle install ``
 
 `` $ rake db:schema:load ``
+
+`` $ rails s ``
